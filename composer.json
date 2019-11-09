@@ -1,0 +1,17 @@
+{
+    "name": "nojus/php-oop-homework",
+    "type": "project",
+    "license": "WTFPL",
+    "authors": [
+        {
+            "name": "Nojus R",
+            "email": "nojusr@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "objects\\": "src/"
+        }
+    }
+}
