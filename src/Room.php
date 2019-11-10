@@ -31,12 +31,51 @@ class Room implements ReservableInterface
         
     }
 
-    public function addReservation (Reservation $reservation)
+    public function __toString ()
     {
-        array_push($reservations, $reservation);
+        $output = "";
+        $output .= "Room no.".$this->roomNumber."\n";
+        $output .= "Room type: ".$this->roomType."\n";
+        $output .= "Traits: ";
+        
+        if ( $this->hasRestroom ) {
+            $output .= "has a restroom, ";
+        } else {
+            $output .= "doesn't have a restroom, ";
+        }
+        
+        if ( $this->hasBalcony ) {
+            $output .= "has a balcony\n";
+        } else {
+            $output .= "doesn't have a balcony\n";
+        }
+        
+        $output .= "Beds: ".$this->bedCount."\n";
+        $output .= "Extras: ";
+        
+        foreach ( $this->extras as $extra ) {
+            $output .= $extra.", ";
+        }
+        
+        $output .= "\n";
+        
+        $output .= "Price: ".$this->price."\n";
+        
+        $output .= "Reservations: \n";
+        
+        foreach ( $this->reservations as $res ) {
+            $output .= (string) $res."\n";
+        }
+        
+        return $output;
     }
 
-    public function removeReservation (Reservation $reservation)
+    public function addReservation (Reservation $reservation): void
+    {
+        array_push($this->reservations, $reservation);
+    }
+
+    public function removeReservation (Reservation $reservation): void
     {
         foreach($reservations as $index => $res)
         {
@@ -49,59 +88,73 @@ class Room implements ReservableInterface
     }
 
 
-    public function getRoomType(){
+    public function getRoomType(): string
+    {
         return $this->roomType;
     }
 
-    public function setRoomType($roomType){
+    public function setRoomType( string $roomType ): void
+    {
         $this->roomType = $roomType;
     }
 
-    public function getHasRestroom(){
+    public function getHasRestroom(): bool
+    {
         return $this->hasRestroom;
     }
 
-    public function setHasRestroom($hasRestroom){
+    public function setHasRestroom( bool $hasRestroom ): void
+    {
         $this->hasRestroom = $hasRestroom;
     }
 
-    public function getHasBalcony(){
+    public function getHasBalcony(): bool
+    {
         return $this->hasBalcony;
     }
 
-    public function setHasBalcony($hasBalcony){
+    public function setHasBalcony( bool $hasBalcony ): void
+    {
         $this->hasBalcony = $hasBalcony;
     }
 
-    public function getBedCount(){
+    public function getBedCount(): int
+    {
         return $this->bedCount;
     }
 
-    public function setBedCount($bedCount){
+    public function setBedCount( int $bedCount ): void
+    {
         $this->bedCount = $bedCount;
     }
 
-    public function getExtras(){
+    public function getExtras(): array
+    {
         return $this->extras;
     }
 
-    public function setExtras($extras){
+    public function setExtras( array $extras ): void
+    {
         $this->extras = $extras;
     }
 
-    public function getRoomNumber(){
+    public function getRoomNumber(): int
+    {
         return $this->roomNumber;
     }
 
-    public function setRoomNumber($roomNumber){
+    public function setRoomNumber( int $roomNumber ): void
+    {
         $this->roomNumber = $roomNumber;
     }
 
-    public function getPrice(){
+    public function getPrice(): int
+    {
         return $this->price;
     }
 
-    public function setPrice($price){
+    public function setPrice( int $price ): void
+    {
         $this->price = $price;
     }
 

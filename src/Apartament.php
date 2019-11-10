@@ -5,7 +5,7 @@ declare(strict_types = 1);
 namespace objects;
 
 
-class Bedroom extends Room
+class Apartament extends Room
 {
     
     public function __construct( int $roomNumber, int $price )
