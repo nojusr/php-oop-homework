@@ -77,16 +77,20 @@ class Room implements ReservableInterface
 
     public function removeReservation (Reservation $reservation): void
     {
-        foreach($reservations as $index => $res)
+        foreach($this->reservations as $index => $res)
         {
             if ($res == $reservation)
             {
-                unset($reservations[$index]);
+                unset($this->reservations[$index]);
                 return;
             }
         }
     }
 
+    public function getReservations (): array
+    {
+        return $this->reservations;
+    }
 
     public function getRoomType(): string
     {

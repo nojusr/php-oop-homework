@@ -30,22 +30,22 @@ class Reservation
 
 
 
-    public function getStartDate(): DateTime
+    public function getStartDate(): \DateTime
     {
         return $this->startDate;
     }
 
-    public function setStartDate( DateTime $startDate ): void
+    public function setStartDate( \DateTime $startDate ): void
     {
         $this->startDate = $startDate;
     }
 
-    public function getEndDate(): DateTime
+    public function getEndDate(): \DateTime
     {
         return $this->endDate;
     }
 
-    public function setEndDate( DateTime $endDate ): void
+    public function setEndDate( \DateTime $endDate ): void
     {
         $this->endDate = $endDate;
     }
