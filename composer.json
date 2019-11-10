@@ -11,7 +11,10 @@
     "require": {},
     "autoload": {
         "psr-4": {
-            "objects\\": "src/"
+            "Entities\\": "src/Entities",
+            "Exceptions\\": "src/Exceptions",
+            "Statics\\": "src/Static",
+            "Interfaces\\": "src/Interfaces"
         }
     }
 }
