@@ -27,11 +27,7 @@ class BookingManager
             
             // doesn't cover all cases but it's good enough for an exercise
             if ($roomResSD < $resED && $resSD < $roomResED) {
-                
-                echo $res."\n";
-                echo $roomRes."\n";
-                echo "Failed to add\n";
-                return;
+                throw new ReservationException();
             }
 
         }
