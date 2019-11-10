@@ -4,6 +4,7 @@ declare(strict_types = 1);
 
 namespace objects;
 
+
 class Bedroom extends Room
 {
     
